@@ -1,0 +1,29 @@
+<h3>List of heroes</h3>
+<ul>
+  <li [class.selected]="hero === selectedHero" *ngFor = "let hero of heroes" (click) = "selectedHeroDetail(hero)">
+    <span>{{hero.id}} {{hero.name}}</span>
+  </li>
+</ul>
+<app-hero-detail [heroDetail] = "selectedHero"></app-hero-detail>
+<!-- <div *ngIf = "messagesService.messages.length">
+  <div *ngFor = "let message of messagesService.messages">{{message}}</div>
+  <button (click) = "messagesService.clearMessage()">Clear</button>
+</div> -->
+
+
+
+
+
+
+
+<!-- <form #heroForm="ngForm" ngForm (submit)="formSubmitted()">
+  <div>
+    <label for="">Hero name: <input ngModel name="heroName" #heroName="ngModel" [(ngModel)]="hero.name" pattern="^(S).*(n)$" required minlength="5"></label>
+    <div *ngIf="(heroForm.submitted || heroName.touched) && ! heroName.valid">
+      <span *ngIf="heroName.errors.required">Field is required</span>
+      <span *ngIf="heroName.errors.minlength">Minimum 5 required</span>
+      <span *ngIf="heroName.errors.pattern">pattern missmatch</span>
+    </div>
+  </div>
+  <button>Submit me</button>
+</form>-->
